@@ -10,5 +10,10 @@ go_import_path: ./server/core
 
 script: go test ./server/core/
 
+#after_success:
+ # - sh .travis/deploy_dockerhub.sh
 after_success:
-  - sh .travis/deploy_dockerhub.sh
+   - if [ "$TRAVIS_BRANCH" == "master" ]; then
+     docker login -u="$DOCKER_USER" -p="$DOCKER_PASS";
+     docker push lbohdan/citest;
+     fi
