@@ -3,6 +3,8 @@ language: go
 go:
   - 1.8.x
 
+install: make get-deps
+
 go_import_path: ./server/core
 
 script: go test ./...
