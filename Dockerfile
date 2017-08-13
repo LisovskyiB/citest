@@ -10,9 +10,6 @@ COPY . /go/src/citest
 #RUN go-wrapper download
 #RUN go-wrapper install
 RUN go get ./server
-#RUN go build
-# RUN go get github.com/rcrowley/go-metrics
-# RUN go get github.com/vrischmann/go-metrics-influxdb
 # Set the PORT environment variable inside the container
 ENV PORT 8080
 # Expose port 8080 to the host so we can access our application
