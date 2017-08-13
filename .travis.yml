@@ -8,4 +8,4 @@ install:
 
 go_import_path: ./server/core
 
-script: go test ./...
+script: go test ./server/core/
