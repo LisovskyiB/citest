@@ -8,7 +8,6 @@ WORKDIR /go/src/citest
 COPY . /go/src/citest
 # Download and install any required third party dependencies into the container.
 RUN go get ./server
-
 # Set the PORT environment variable inside the container
 ENV PORT 8080
 # Expose port 8080 to the host so we can access our application
