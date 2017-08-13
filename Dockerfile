@@ -7,8 +7,6 @@ WORKDIR /go/src/citest
 # Copy the example-app directory (where the Dockerfile lives) into the container.
 COPY . /go/src/citest
 # Download and install any required third party dependencies into the container.
-#RUN go-wrapper download
-#RUN go-wrapper install
 RUN go get ./server
 # Set the PORT environment variable inside the container
 ENV PORT 8080
