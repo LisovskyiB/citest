@@ -1,5 +1,5 @@
 #!/bin/sh
-docker login -u $DOCKER_USER -p $DOCKER_PASS
+docker login --username $DOCKER_USER --password $DOCKER_PASS
 if [ "$TRAVIS_BRANCH" = "master" ]; then
     TAG="latest"
 else
@@ -7,4 +7,4 @@ else
 fi
 docker build -f Dockerfile -t $TRAVIS_REPO_SLUG:$TAG .
 
-docker push lbohdan/citest:tagname
+docker push $TRAVIS_REPO_SLUG
