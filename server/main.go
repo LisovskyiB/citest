@@ -15,7 +15,6 @@ func main() {
 	r.HandleFunc("/message", core.MessageHandler) // listen message
 	r.HandleFunc("/", tes)                        // listen message
 	err := http.ListenAndServe(":5000", r)
-
 	if err != nil {
 		fmt.Printf("%+v\n", "cannot run server")
 	}
