@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
+	"os"
+
 	"github.com/gorilla/mux"
 )
 
@@ -14,7 +16,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/message", core.MessageHandler) // listen message
 	r.HandleFunc("/", tes)                        // listen message
-	err := http.ListenAndServe(":5000", r)
+	err := http.ListenAndServe(":"+os.Getenv("PORT"), r)
 	if err != nil {
 		fmt.Printf("%+v\n", "cannot run server")
 	}
