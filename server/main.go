@@ -23,5 +23,5 @@ func main() {
 }
 
 func tes(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "tes GET method")
+	fmt.Fprintf(w, "test to GET method")
 }
