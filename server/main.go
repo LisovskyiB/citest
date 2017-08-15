@@ -12,7 +12,7 @@ import (
 
 func main() {
 
-	fmt.Printf("%+v\n", "run server")
+	fmt.Printf("%+v\n", "run server with PORT: "+os.Getenv("PORT"))
 	r := mux.NewRouter()
 	r.HandleFunc("/message", core.MessageHandler) // listen message
 	r.HandleFunc("/", tes)                        // listen message
